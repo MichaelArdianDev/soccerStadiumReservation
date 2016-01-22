@@ -1,0 +1,48 @@
+
+/*
+    Core: General style
+----------------------------
+*/
+html,
+body {
+  overflow-x: hidden!important;
+  font-family: 'Helvetica Neue',helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100%;
+  background-image: url('images/background.jpg');
+  font-size: small;
+}
+
+/* Utility */
+/* H1 - H6 font */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: 'Helvetica Neue', helvetica, sans-serif;
+}
+
+
+/* login form box */
+
+.form-box {
+  float: right;
+  width: 360px;
+  margin: 130px 200px auto auto;
+}
+
+.form-box .header {
+  background: #ff842c   ;
+  box-shadow: none;
+}
+.form-group {
+ /*margin-bottom: 3px;*/
+}
