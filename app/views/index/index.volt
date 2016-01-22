@@ -88,7 +88,7 @@
                       <div class="item">
                         <img src="img/stadium/3.jpg" alt="Third slide">
                         <div class="carousel-caption">
-                          Second Blue
+                          Stadium Blue
                         </div>
                       </div>
                     </div> 
