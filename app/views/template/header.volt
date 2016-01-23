@@ -8,20 +8,6 @@
                           <p class="hidden-xs" style="font-size: 1.3em;">Welcome {{session.get('user_name')}}</p>
                         </a>
                         <ul class="dropdown-menu">
-                          <li class="user-header">
-                             <div class="form-group">
-                                <div class="input-group col-sm-12">
-                                  <label>Email Address</label>
-                                    {{ email_field('email', 'class': 'form-control input-sm','required':'required','placeholder':'Input Email Adrees') }}
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="input-group col-sm-12">
-                                    <label>Password</label>
-                                    {{ password_field('password', 'class': 'form-control input-sm','required':'required','placeholder':'Input Password') }}
-                                </div>
-                            </div>
-                          </li>
                 
                           <li class="user-footer">
                             <div class="pull-left">

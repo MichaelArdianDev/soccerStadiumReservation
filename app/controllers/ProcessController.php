@@ -42,8 +42,8 @@ class ProcessController extends ControllerBase
             $order->end_hour = $value->end_hour;
             $order->user_id = $value->user_id;
             $order->save();
+            $value->delete();
         }
-            // $orderList->delete();
         $this->response->redirect('/dashboard');
     }
 }
