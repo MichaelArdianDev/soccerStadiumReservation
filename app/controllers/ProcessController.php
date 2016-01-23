@@ -8,6 +8,12 @@ class ProcessController extends \Phalcon\Mvc\Controller
 		$this->view->setVar('data', $orderList);
 	}
 
+    public function delAction($id){
+        $orderList = TempOrder::find("id = {$id} AND user_id = '{$this->session->get('user_id')}'");
+        $orderList->delete();
+        $this->response->redirect('/process');
+    }
+    
     public function addAction($stadium,$hour,$idUser) {
 
     	$order = new TempOrder();

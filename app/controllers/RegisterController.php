@@ -9,13 +9,17 @@ class RegisterController extends \Phalcon\Mvc\Controller
 
    			$register = new Users();
 
-   			$register->id 				= UUID::v4();
-   			$register->password 		= $this->security->hash($this->request->getPost('password'));
+   			$register->id 				    = UUID::v4();
+   			$register->password 		  = $this->security->hash($this->request->getPost('password'));
    			$register->phonenumber 		= $this->request->getPost('phonenumber');
-   			$register->email 			= $this->request->getPost('email');
-   			$register->name 			= $this->request->getPost('name');
+   			$register->email 			    = $this->request->getPost('email');
+   			$register->name 			    = $this->request->getPost('name');
    			$register->created_date 	= Carbon::now()->now()->toDateTimeString();
    			$register->updated_date 	= Carbon::now()->now()->toDateTimeString();
+
+        $this->session->set('user_name', $register->name);
+        $this->session->set('user_email', $register->username);
+        $this->session->set('user_id', $register->id);        
 
         $user = Users::findFirstByEmail($register->email);
         if($user):
