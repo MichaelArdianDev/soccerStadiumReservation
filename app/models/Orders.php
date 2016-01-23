@@ -58,6 +58,14 @@ class Orders extends \Phalcon\Mvc\Model
     public $user_id;
 
     /**
+     * Initialize method for model.
+     */
+    public function initialize()
+    {
+        $this->belongsTo('user_id', 'Users', 'id', array('alias' => 'Userss'));
+    }
+
+    /**
      * Returns table name mapped in the model.
      *
      * @return string

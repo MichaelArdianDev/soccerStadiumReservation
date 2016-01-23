@@ -1,7 +1,10 @@
 <?php
 
-class DashboardController extends \Phalcon\Mvc\Controller
+class DashboardController extends ControllerBase
 {
+    public function initialize(){
+        $this->checkSession();
+    }
 
     public function indexAction()
     {
@@ -27,13 +30,17 @@ class DashboardController extends \Phalcon\Mvc\Controller
     		foreach ($hours as $key => $value) {
 
 	    		$order = Orders::findFirst("stadium = '{$i}' AND start_hour = '{$key}'");
-	    		
+	    		$name = $link;
+
+	    		if($order):
+	    			$name = $order->Userss->name;
+	    		endif;
 
 	    		$link = "<a href=\"/process/add/{$i}/{$key}/{$this->session->get('user_id')}\" class=\"btn-xs btn-success\">Book Now</a>";
 	    		$stadium[$key][$i]	 = [
 	    			'desc' 		=> $value['desc'],
 	    			'userId' 	=> ($order->user_id) ? $order->user_id : "" ,
-	    			'name' 		=> ($order->user_id) ? $order->user_id : $link,
+	    			'name' 		=> $name,
 	    		];
     		}
     	}

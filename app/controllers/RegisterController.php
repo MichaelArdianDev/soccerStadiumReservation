@@ -17,10 +17,6 @@ class RegisterController extends \Phalcon\Mvc\Controller
    			$register->created_date 	= Carbon::now()->now()->toDateTimeString();
    			$register->updated_date 	= Carbon::now()->now()->toDateTimeString();
 
-        $this->session->set('user_name', $register->name);
-        $this->session->set('user_email', $register->username);
-        $this->session->set('user_id', $register->id);        
-
         $user = Users::findFirstByEmail($register->email);
         if($user):
               $this->flash->error("can not register, User " . $register->email . " Alredy Registerd! ");
@@ -28,6 +24,11 @@ class RegisterController extends \Phalcon\Mvc\Controller
         endif;
 
         if ($register->save()===true) {
+
+              $this->session->set('user_name', $register->name);
+              $this->session->set('user_email', $register->email);
+              $this->session->set('user_id', $register->id);        
+
               $this->flash->success("Your " . $register->email . " has been registered Please Login for booking court");
               $this->response->redirect('dashboard');
         }

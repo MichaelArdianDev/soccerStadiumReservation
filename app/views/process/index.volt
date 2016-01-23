@@ -5,7 +5,7 @@
 
 {{ content() }}
 
-{{ form("/register", "method":"post","enctype":"multipart/form-data") }}
+{{ form("/process/checkout", "method":"post","enctype":"multipart/form-data") }}
 <div class="box panel-body" style="border-radius:0px">
     <div>
         <div class="row">
@@ -34,6 +34,7 @@
                 <div class="form-group">
                     <label for="input_date" class="col-sm-3"></label>
                     <div class="input-group col-xs-10">
+                        <a href="/dashboard" class="btn btn-warning"> <i class="fa fa-backward"></i> Add More Book</a> &nbsp; 
                         {{ submit_button("checkout", 'class' : 'btn btn-danger') }}
                 </div>
 

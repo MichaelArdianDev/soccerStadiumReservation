@@ -8,9 +8,12 @@
 
 {{ content() }}
 
+
+
 <div class="box panel-body" style="border-radius:0px">
     <div>
         <div class="row">
+            <p align="center">Click book for reservation</p>
             <table id="table" class="table table-bordered table-hover">
                 <thead>
                     <tr>
