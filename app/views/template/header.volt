@@ -8,24 +8,26 @@
                       <li class="user-header">
                          <div class="form-group">
                             <div class="input-group col-sm-12">
+                            {{ form("/login", "method":"post","enctype":"multipart/form-data") }}
                               <label>Email Address</label>
-                                {{ text_field('type', 'class': 'form-control input-sm','required':'required','placeholder':'Input Email Adrees') }}
+                                {{ email_field('email', 'class': 'form-control input-sm','required':'required','placeholder':'Input Email Adrees') }}
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="input-group col-sm-12">
                                 <label>Password</label>
-                                {{ text_field('type', 'class': 'form-control input-sm','required':'required','placeholder':'Input Password') }}
+                                {{ password_field('password', 'class': 'form-control input-sm','required':'required','placeholder':'Input Password') }}
                             </div>
                         </div>
                       </li>
             
                       <li class="user-footer">
                         <div class="pull-left">
-                          <a href="#" class="btn btn-default btn-flat">Login</a>
+                        {{ submit_button("Login", 'class' : 'btn btn-success') }}
+                      </form>
                         </div>
                         <div class="pull-right">
-                          <a href="#" class="btn btn-default btn-flat">Register</a>
+                          <a href="/register" class="btn btn-primary btn-flat">Register</a>
                         </div>
                       </li>
                     </ul>
