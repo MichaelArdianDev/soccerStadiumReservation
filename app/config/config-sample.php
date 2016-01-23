@@ -4,11 +4,11 @@ defined('APP_PATH') || define('APP_PATH', realpath('.'));
 
 return new \Phalcon\Config(array(
     'database' => array(
-        'adapter'     => 'Mysql',
+        'adapter'     => 'Mysql', 
         'host'        => 'localhost',
-        'username'    => 'root',
-        'password'    => '',
-        'dbname'      => 'test',
+        'username'    => 'root', //your mysql user
+        'password'    => '',    // your mysql password
+        'dbname'      => '', // your mysql databases
         'charset'     => 'utf8',
     ),
     'application' => array(
@@ -19,6 +19,6 @@ return new \Phalcon\Config(array(
         'pluginsDir'     => APP_PATH . '/app/plugins/',
         'libraryDir'     => APP_PATH . '/app/library/',
         'cacheDir'       => APP_PATH . '/app/cache/',
-        'baseUri'        => '/soccer-stadium/',
+        'baseUri'        => '/',
     )
 ));
