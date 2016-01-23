@@ -1,8 +1,6 @@
 <?php
 
-use Phalcon\Mvc\Model\Validator\Email as Email;
-
-class Users extends \Phalcon\Mvc\Model
+class Orders extends \Phalcon\Mvc\Model
 {
 
     /**
@@ -15,25 +13,37 @@ class Users extends \Phalcon\Mvc\Model
      *
      * @var string
      */
-    public $password;
+    public $stadium;
 
     /**
      *
      * @var string
      */
-    public $created_date;
+    public $start_hour;
 
     /**
      *
      * @var string
      */
-    public $phonenumber;
+    public $end_hour;
 
     /**
      *
      * @var string
      */
-    public $updated_date;
+    public $started_date;
+
+    /**
+     *
+     * @var string
+     */
+    public $end_date;
+
+    /**
+     *
+     * @var string
+     */
+    public $date_created;
 
     /**
      *
@@ -45,44 +55,7 @@ class Users extends \Phalcon\Mvc\Model
      *
      * @var string
      */
-    public $email;
-
-    /**
-     *
-     * @var string
-     */
-    public $name;
-
-    /**
-     * Validations and business logic
-     *
-     * @return boolean
-     */
-    public function validation()
-    {
-        $this->validate(
-            new Email(
-                array(
-                    'field'    => 'email',
-                    'required' => true,
-                )
-            )
-        );
-
-        if ($this->validationHasFailed() == true) {
-            return false;
-        }
-
-        return true;
-    }
-
-    /**
-     * Initialize method for model.
-     */
-    public function initialize()
-    {
-        $this->hasMany('id', 'Orders', 'user_id', array('alias' => 'Orders'));
-    }
+    public $user_id;
 
     /**
      * Returns table name mapped in the model.
@@ -91,14 +64,14 @@ class Users extends \Phalcon\Mvc\Model
      */
     public function getSource()
     {
-        return 'users';
+        return 'orders';
     }
 
     /**
      * Allows to query a set of records that match the specified conditions
      *
      * @param mixed $parameters
-     * @return Users[]
+     * @return Orders[]
      */
     public static function find($parameters = null)
     {
@@ -109,7 +82,7 @@ class Users extends \Phalcon\Mvc\Model
      * Allows to query the first record that match the specified conditions
      *
      * @param mixed $parameters
-     * @return Users
+     * @return Orders
      */
     public static function findFirst($parameters = null)
     {
