@@ -1,9 +1,11 @@
               <div class="navbar-custom-menu">
                 {% if(session.get('user_name')) %}
                   <ul class="nav navbar-nav">
+                      <li><a href="/dashboard">Dashboard</a></li>
+                      <li><a href="/process">Your Order</a></li>
                       <li class="dropdown user user-menu" class="">
-                        <a href="#" class="dropdown-toggle label label-warning" data-toggle="dropdown">
-                          <span class="hidden-xs">{{session.get('user_name')}}</span>
+                        <a href="#" class="dropdown-toggle label label-success" data-toggle="dropdown">
+                          <p class="hidden-xs" style="font-size: 1.3em;">Welcome {{session.get('user_name')}}</p>
                         </a>
                         <ul class="dropdown-menu">
                           <li class="user-header">
@@ -24,9 +26,6 @@
                           <li class="user-footer">
                             <div class="pull-left">
                               <a href="/login/out" class="btn btn-danger btn-flat">Log Out</a>
-                            </div>
-                            <div class="pull-right">
-                              <a href="/dashboard" class="btn btn-warning btn-flat">DASHBOARD</a>
                             </div>
                           </li>
                       </ul>

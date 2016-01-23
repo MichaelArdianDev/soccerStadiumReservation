@@ -28,30 +28,17 @@ class DashboardController extends \Phalcon\Mvc\Controller
 
 	    		$order = Orders::findFirst("stadium = '{$i}' AND start_hour = '{$key}'");
 	    		
+
+	    		$link = "<a href=\"/process/add/{$i}/{$key}/{$this->session->get('user_id')}\" class=\"btn-xs btn-success\">Book Now</a>";
 	    		$stadium[$key][$i]	 = [
-	    			'desc' => $value['desc'],'userId' => ($order->user_id) ? $order->user_id : "" , 'name' => ($order->user_id) ? $order->user_id : "",
-	    			'desc' => $value['desc'],'userId' => ($order->user_id) ? $order->user_id : "" , 'name' => ($order->user_id) ? $order->user_id : "",
-	    			'desc' => $value['desc'],'userId' => ($order->user_id) ? $order->user_id : "" , 'name' => ($order->user_id) ? $order->user_id : "",
-	    			'desc' => $value['desc'],'userId' => ($order->user_id) ? $order->user_id : "" , 'name' => ($order->user_id) ? $order->user_id : "",
-	    			'desc' => $value['desc'],'userId' => ($order->user_id) ? $order->user_id : "" , 'name' => ($order->user_id) ? $order->user_id : "",
-	    			'desc' => $value['desc'],'userId' => ($order->user_id) ? $order->user_id : "" , 'name' => ($order->user_id) ? $order->user_id : "",
-	    			'desc' => $value['desc'],'userId' => ($order->user_id) ? $order->user_id : "" , 'name' => ($order->user_id) ? $order->user_id : "",
-	    			'desc' => $value['desc'],'userId' => ($order->user_id) ? $order->user_id : "" , 'name' => ($order->user_id) ? $order->user_id : "",
-	    			'desc' => $value['desc'],'userId' => ($order->user_id) ? $order->user_id : "" , 'name' => ($order->user_id) ? $order->user_id : "",
-	    			'desc' => $value['desc'],'userId' => ($order->user_id) ? $order->user_id : "" , 'name' => ($order->user_id) ? $order->user_id : "",
-	    			'desc' => $value['desc'],'userId' => ($order->user_id) ? $order->user_id : "" , 'name' => ($order->user_id) ? $order->user_id : "",
-	    			'desc' => $value['desc'],'userId' => ($order->user_id) ? $order->user_id : "" , 'name' => ($order->user_id) ? $order->user_id : "",
-	    			'desc' => $value['desc'],'userId' => ($order->user_id) ? $order->user_id : "" , 'name' => ($order->user_id) ? $order->user_id : "",
+	    			'desc' 		=> $value['desc'],
+	    			'userId' 	=> ($order->user_id) ? $order->user_id : "" ,
+	    			'name' 		=> ($order->user_id) ? $order->user_id : $link,
 	    		];
     		}
     	}
 
-    	// echo "<pre>";
-    	// print_r($stadium);
-    	// exit;
-    	// $this->view->setVar('hours', $hours);
     	$this->view->setVar('data', $stadium);
     }
 
 }
-

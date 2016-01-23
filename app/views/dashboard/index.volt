@@ -26,18 +26,17 @@
                     </tr>
                 </thead>
                 <tbody>
-                <pre>
                     {%for i in data%}
                     <tr>
                         <td>{{i[1]['desc']}}</td>
-                        <td>{{i[1]['userId']}}</td>
-                        <td>{{i[2]['userId']}}</td>
-                        <td>{{i[3]['userId']}}</td>
-                        <td>{{i[4]['userId']}}</td>
-                        <td>{{i[5]['userId']}}</td>
-                        <td>{{i[6]['userId']}}</td>
-                        <td>{{i[7]['userId']}}</td>
-                        <td>{{i[8]['userId']}}</td>
+                        <td>{{i[1]['name']}}</td>
+                        <td>{{i[2]['name']}}</td>
+                        <td>{{i[3]['name']}}</td>
+                        <td>{{i[4]['name']}}</td>
+                        <td>{{i[5]['name']}}</td>
+                        <td>{{i[6]['name']}}</td>
+                        <td>{{i[7]['name']}}</td>
+                        <td>{{i[8]['name']}}</td>
                     </tr>
                     {%endfor%}
                 </tbody>
