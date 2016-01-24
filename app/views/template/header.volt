@@ -26,7 +26,7 @@
                           <li class="user-header">
                              <div class="form-group">
                                 <div class="input-group col-sm-12">
-                                {{ form("/login", "method":"post","enctype":"multipart/form-data") }}
+                                {{ form("login", "method":"post","enctype":"multipart/form-data") }}
                               
                                   <label>Email Address</label>
                                     {{ email_field('email', 'class': 'form-control input-sm','required':'required','placeholder':'Input Email Adrees') }}

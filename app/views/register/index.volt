@@ -4,7 +4,7 @@
 {% block content %}
 
 {{ content() }}
-{{ form("/register", "method":"post","enctype":"multipart/form-data") }}
+{{ form("register", "method":"post","enctype":"multipart/form-data") }}
 
 {{ content() }}
 

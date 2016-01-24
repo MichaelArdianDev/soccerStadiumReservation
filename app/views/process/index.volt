@@ -5,7 +5,7 @@
 
 {{ content() }}
 
-{{ form("/process/checkout", "method":"post","enctype":"multipart/form-data") }}
+{{ form("process/checkout", "method":"post","enctype":"multipart/form-data") }}
 <div class="box panel-body" style="border-radius:0px">
     <div>
         <div class="row">

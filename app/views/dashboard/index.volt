@@ -14,7 +14,7 @@
     <div>
         <div class="row">
           <div class="col-xs-6">
-{{ form("/dashboard", "method":"post","enctype":"multipart/form-data") }}
+{{ form("dashboard", "method":"post","enctype":"multipart/form-data") }}
               <label>Select Date: </label>
               <input  name="date" type="text" id="datepicker" placeholder="Select Date on button" required>
               <input class="form-control btn-primary" type="submit" value="Select Date">
