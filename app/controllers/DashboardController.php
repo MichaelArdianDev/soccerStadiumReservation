@@ -2,7 +2,8 @@
 
 class DashboardController extends ControllerBase
 {
-    public function initialize(){
+	public function initialize(){
+		parent::initialize();
         $this->checkSession();
     }
 
@@ -25,21 +26,25 @@ class DashboardController extends ControllerBase
     	];
 
     	$stadium = [];
+    	$userID = "";
     	for ($i=1; $i <=8 ; $i++) { 
 
     		foreach ($hours as $key => $value) {
 
 	    		$order = Orders::findFirst("stadium = '{$i}' AND start_hour = '{$key}'");
+
+	    		$link = "<a href=\"/process/add/{$i}/{$key}/{$this->session->get('user_id')}\" class=\"btn-xs btn-success\">Book Now</a>";
 	    		$name = $link;
 
 	    		if($order):
 	    			$name = $order->Userss->name;
+		    		$userID = isset($order->user_id) ? $order->user_id : "";
+
 	    		endif;
 
-	    		$link = "<a href=\"/process/add/{$i}/{$key}/{$this->session->get('user_id')}\" class=\"btn-xs btn-success\">Book Now</a>";
 	    		$stadium[$key][$i]	 = [
 	    			'desc' 		=> $value['desc'],
-	    			'userId' 	=> ($order->user_id) ? $order->user_id : "" ,
+	    			'userId' 	=> $userID,
 	    			'name' 		=> $name,
 	    		];
     		}

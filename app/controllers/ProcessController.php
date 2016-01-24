@@ -4,6 +4,7 @@ class ProcessController extends ControllerBase
 {
 
     public function initialize(){
+        parent::initialize();
         $this->checkSession();
     }
     

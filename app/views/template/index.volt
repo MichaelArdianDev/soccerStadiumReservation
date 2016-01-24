@@ -2,30 +2,27 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>HomePage</title>
-    <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!-- Bootstrap 3.3.4 -->
-    <link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <!-- Font Awesome Icons -->
-    <!-- Ionicons -->
-    <!-- Theme style -->
-    <style type="text/css">.content-wrapper {
-    background: url('../../img/stadium/wallpaper.jpg') !important;
-}</style>
-    <link href="../../css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
-    <!-- AdminLTE Skins. Choose a skin from the css/skins
-         folder instead of downloading all of them to reduce the load. -->
-    <link href="../../css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
+    <title>HomePage</title>
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <script>
+      var baseUri = '{{url()}}';
+    </script>
+
+      {{ assets.outputCss('cssHeader') }}
+      {{ assets.outputCss('jsHeader') }}
+
+<style type="text/css">.content-wrapper {
+    background: url('../../img/stadium/wallpaper.jpg') !important;
+  }
+</style>
+
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+
   <body class="skin-blue layout-top-nav">
     <div class="wrapper">
 
@@ -76,5 +73,6 @@
     <script src="../../js/AdminLTE/app.min.js" type="text/javascript"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="../../js/AdminLTE/demo.js" type="text/javascript"></script>
+      {{assets.outputJs('jsFooter')}}
   </body>
 </html>

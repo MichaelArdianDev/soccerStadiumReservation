@@ -14,7 +14,14 @@
     <div>
         <div class="row">
             <p align="center">Click book for reservation</p>
-            <table id="table" class="table table-bordered table-hover">
+             <div class="form-group">
+                    <label class="col-sm-3">Selecct Active Date </label>
+                    <div class="input-group col-sm-4">
+                        <input class="form-control Datepicker" name="date" type="text" id="datepicker" placeholder="Select Date on button>" required>
+                        <input name="time" type="text" class="form-control timepicker" placeholder="00:00:00 <hours:minutes:seconds>" required>
+                    </div>
+                </div>
+            <table id="stadiumTable" class="table table-bordered table-hover">
                 <thead>
                     <tr>
                       <th>Hours </th>
@@ -48,10 +55,5 @@
     </div>
 </div>
 </form>
-<script>
-    $(function () {
-        $('#table').DataTable({});
-    });
-</script>
 
 {% endblock %}

@@ -1,7 +1,11 @@
 <?php
 
-class RegisterController extends \Phalcon\Mvc\Controller
+class RegisterController extends ControllerBase
 {
+
+    public function initialize() {
+      parent::initialize();
+    }
 
     public function indexAction()
     {

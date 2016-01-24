@@ -2,11 +2,12 @@
 
 use Phalcon\Mvc\Controller;
 
-class LoginController extends Controller
+class LoginController extends ControllerBase
 {
-  public function initialize()
-  {
-  }
+
+    public function initialize() {
+      parent::initialize();
+    }
 
   public function indexAction()
   {
@@ -22,7 +23,6 @@ class LoginController extends Controller
         if ($this->security->checkHash($password, $user->password)) {
 
             $this->session->set('user_name', $user->name);
-            $this->session->set('user_email', $user->username);
             $this->session->set('user_id', $user->id);
             $this->response->redirect('dashboard');
             return;
