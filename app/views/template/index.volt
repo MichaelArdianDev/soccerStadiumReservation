@@ -10,7 +10,7 @@
     </script>
 
       {{ assets.outputCss('cssHeader') }}
-      {{ assets.outputCss('jsHeader') }}
+      {{ assets.outputJs('jsHeader') }}
 
 <style type="text/css">.content-wrapper {
     background: url('../../img/stadium/wallpaper.jpg') !important;
@@ -60,19 +60,6 @@
       </footer>
     </div><!-- ./wrapper -->
 
-
-    <!-- jQuery 2.1.4 -->
-    <script src="../../js/plugins/jQuery/jQuery-2.1.4.min.js" type="text/javascript"></script>
-    <!-- Bootstrap 3.3.2 JS -->
-    <script src="../../js/bootstrap.min.js" type="text/javascript"></script>
-    <!-- SlimScroll -->
-    <script src="../../js/plugins/slimScroll/jquery.slimscroll.min.js" type="text/javascript"></script>
-    <!-- FastClick -->
-    <script src="../../js/plugins/fastclick/fastclick.min.js" type="text/javascript"></script>
-    <!-- AdminLTE App -->
-    <script src="../../js/AdminLTE/app.min.js" type="text/javascript"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="../../js/AdminLTE/demo.js" type="text/javascript"></script>
       {{assets.outputJs('jsFooter')}}
   </body>
 </html>

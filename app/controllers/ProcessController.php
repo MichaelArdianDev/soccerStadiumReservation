@@ -42,6 +42,7 @@ class ProcessController extends ControllerBase
             $order->start_hour = $value->start_hour;
             $order->end_hour = $value->end_hour;
             $order->user_id = $value->user_id;
+            $order->date_created = Carbon::now()->toDateString();
             $order->save();
             $value->delete();
         }

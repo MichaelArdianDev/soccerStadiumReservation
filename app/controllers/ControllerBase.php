@@ -4,7 +4,6 @@ use Phalcon\Mvc\Controller;
 
 class ControllerBase extends Controller
 {
-
     public function initialize(){
         $this->assets
           ->collection('cssHeader')
@@ -21,6 +20,14 @@ class ControllerBase extends Controller
           ->addJs('js/jquery-ui.min.js')
           ->addJs('js/bootstrap.min.js')
           ->addJs('js/AdminLTE/app.js');
+
+        $this->assets
+          ->collection('jsFooter')
+          ->addJs('js/plugins/jQuery/jQuery-2.1.4.min.js')
+          ->addJs('js/plugins/slimScroll/jquery.slimscroll.min.js')
+          ->addJs('js/plugins/fastclick/fastclick.min.js')
+          ->addJs('js/AdminLTE/app.min.js')
+          ->addJs('js/AdminLTE/demo.js');
     }
 
     public function checkSession() {

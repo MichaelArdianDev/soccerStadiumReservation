@@ -1,10 +1,10 @@
 
+
 {% extends 'template/index.volt' %}
 
 {% block content %}
 
 {{ content() }}
-{{ form("/register", "method":"post","enctype":"multipart/form-data") }}
 
 {{ content() }}
 
@@ -13,15 +13,24 @@
 <div class="box panel-body" style="border-radius:0px">
     <div>
         <div class="row">
-            <p align="center">Click book for reservation</p>
-             <div class="form-group">
-                    <label class="col-sm-3">Selecct Active Date </label>
-                    <div class="input-group col-sm-4">
-                        <input class="form-control Datepicker" name="date" type="text" id="datepicker" placeholder="Select Date on button>" required>
-                        <input name="time" type="text" class="form-control timepicker" placeholder="00:00:00 <hours:minutes:seconds>" required>
-                    </div>
-                </div>
-            <table id="stadiumTable" class="table table-bordered table-hover">
+          <div class="col-xs-6">
+{{ form("/dashboard", "method":"post","enctype":"multipart/form-data") }}
+              <label>Select Date: </label>
+              <input  name="date" type="text" id="datepicker" placeholder="Select Date on button" required>
+              <input class="form-control btn-primary" type="submit" value="Select Date">
+</form>
+              <br/>
+          </div>
+          <div class="col-xs-6">
+            <p align="center" style="font-size:1.3em"><u>Click book for reservation</u></p>
+            <p align="center" style="font-size:1.7em">{{dateSelected}}</p>
+            <span class="btn-xs btn-warning"></span> &nbsp; yours
+            <span class="btn-xs btn-success"></span> &nbsp; avaible
+            <span class="btn-xs btn-default"></span> &nbsp; booked
+          </div>
+        </div>
+        <div class="row">
+              <table id="stadiumTable" class="table table-bordered table-hover">
                 <thead>
                     <tr>
                       <th>Hours </th>
@@ -54,6 +63,10 @@
         </div>
     </div>
 </div>
-</form>
-
+<script type="text/javascript">
+    $('#datepicker').datepicker({
+        dateFormat: 'yy-mm-dd',
+        timePicker: true, timePickerIncrement: 30,showOn: 'button',
+    });
+</script>
 {% endblock %}
